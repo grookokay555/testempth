@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+<meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+<title>เอดจ์มีพลีส! - พยายามอย่าเพิ่งเสร็จ / เกมเอดจ์จิ้ง / ควบคุมการหลั่ง</title>
+<meta name="description" content="เล่นเกมเอดจ์มีพลีส แล้วปล่อยให้เกมเป็นผู้ตัดสินว่าคุณจะช่วยตัวเองได้เมื่อไหร่และอย่างไร คุณจะเล่นไปจนจบได้ไหม? แล้วเกมจะยอมให้คุณเสร็จตอนจบหรือเปล่า? ;)" />
+<meta name="viewport" content="width=device-width" />
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QF48D6FF2M"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-QF48D6FF2M');
+</script>
+
+<link rel="stylesheet" href="https://www.edgemeplease.com/minimize-css.cgi?v=5" />
+<style>
+.lang-bar a { text-decoration: underline; color: #bbf; }
+.site-tabs { display: flex; width: 100%; margin-bottom: 16px; }
+.site-tabs .tab {
+  width: 50%; padding: 10px 16px; text-align: center;
+  font-size: 30px; font-weight: 700; border-bottom: 3px solid transparent;
+  box-sizing: border-box;
+}
+.site-tabs .tab.active {
+  border-bottom-color: #fff; color: #fff;
+}
+.site-tabs .tab.inactive {
+  border-bottom-color: #555; opacity: 0.55;
+}
+.site-tabs .tab.inactive a {
+  color: inherit; text-decoration: none;
+}
+.site-tabs .tab.inactive:hover { opacity: 0.85; }
+</style>
+<script type="text/javascript" src="https://www.edgemeplease.com/nosleep/?v=3"></script>
+<script type="text/javascript">
+var messages = {
+'first' : [
+	['<small>นี่คือรอบวอร์มอัป เริ่มช่วยตัวเองและพยายามไปให้ถึงจุดใกล้สุดยอดเมื่อแถบขึ้นถึง 100% ของโซน EDGE<br />คุณควรพร้อมที่จะเสร็จเมื่อแถบไปถึงโซน CUM<br />พยายามเข้าใกล้ให้มากที่สุดเท่าที่จะทำได้ มันจะทำให้เกมที่เหลือสนุกยิ่งขึ้น!</small>', 45, 2]
+],
+'go' : [
+	['ตอนนี้คุณช่วยตัวเองได้แล้ว!', 30, 2],
+	['ชักว่าวให้เร็วที่สุดเท่าที่จะทำได้ เดี๋ยวนี้!', 15, 4],
+	['เอาให้แรงและเร็ว', 10, 4],
+	['ลุยให้หนักและไว', 10, 4],
+	['ช่วยตัวเองสิ', 30, 2],
+	['อยากเสร็จแล้วใช่ไหม?', 20, 3],
+	['ใกล้จะถึงแล้วหรือยัง?', 20, 2.5],
+	['รูดมันเลย', 30, 1.5],
+	['ชักว่าว', 25, 2],
+	['ค่อย ๆ รูด', 25, 2],
+	['ช้า ๆ และสม่ำเสมอ...', 30, 1],
+	['ใช้มืออีกข้างสิ!', 20, 2.5],
+	['ถูเฉพาะปลายจู๋เท่านั้น ใช้แค่สองนิ้ว', 25, 2.5],
+	['ช่วยตัวเองเดี๋ยวนี้', 30, 2],
+	['ลงมือชักว่าวเดี๋ยวนี้', 30, 2.3],
+	['บีบไข่ของคุณ', 10, 3],
+	['ตบไข่เบา ๆ', 10, 4]
+],
+'stop' : [
+	['หยุดจับ! ใจเย็น ๆ เตรียมพร้อมสำหรับรอบต่อไป...', 25],
+	['ห้ามแตะ!', 20],
+	['หยุด! พักสั้น ๆ ;-)', 10],
+	['หยุดก่อน! พักหายใจหน่อย ;-)', 5],
+	['หยุด! แล้วก็...', 3],
+	['เอามือออกจากจู๋เดี๋ยวนี้', 25],
+	['ปล่อยจู๋เดี๋ยวนี้', 20],
+	['ยกมือออกจากจู๋เดี๋ยวนี้', 20],
+	['เอามือไว้ด้านหลังศีรษะ', 25],
+	['เอานิ้วแตะหัวนมของคุณ', 25],
+	['เกร็งกล้ามแขนของคุณ', 25],
+	['เลียกล้ามแขนของคุณ', 20],
+	['ลูบไล้ร่างกายของคุณด้วยมือ', 25],
+	['หยุดเดี๋ยวนี้', 15],
+	['หยุด', 25],
+	['หยุดนะ', 15],
+	['หยุดได้แล้ว', 20],
+	['อย่าเพิ่งเสร็จ! หยุดจับได้แล้ว', 25]
+],
+'finish': [
+	['หยุด! ขอโทษด้วย ไม่มีการหลั่งสำหรับคุณ <br />ลองใหม่อีกครั้ง บางทีคุณอาจจะโชคดี... ตอนนี้เอามือออกจากจู๋จนกว่าจะจบ', 45, 'red', 2],
+	['เสร็จเลย! ทำเดี๋ยวนี้', 15, 'green', 4],
+	['เสร็จได้! ค่อย ๆ ไม่ต้องรีบ ;)', 60, 'green', 1.5],
+	['เสร็จเดี๋ยวนี้! ทำให้มันเป็นจุดสุดยอดที่ยิ่งใหญ่ที่สุดเท่าที่คุณเคยมี', 25, 'green', 2],
+	['เสร็จเลย!', 25, 'green', 2],
+	['คุณมีเวลา 5 วินาทีที่จะเริ่มเสร็จ ไม่งั้นเกมจบ!', 6, 'green', 5],
+	['ตอนนี้คุณเสร็จได้แล้ว ลุยเลย!', 25, 'green', 2.5]
+]
+}
+var message_phase2 = "เกมจะเร็วขึ้นแล้วตอนนี้ อย่าลืมว่ายังห้ามเสร็จ!";
+var message_phase3 = "นี่คือช่วงสุดท้ายแล้ว คุณอาจได้รับอนุญาตให้เสร็จเมื่อไหร่ก็ได้ตอนนี้!";
+var gameover_postcum = "ถ้าคุณยังไม่เสร็จ เกมจบแล้ว หยุดช่วยตัวเอง!<br />ถ้าคุณเสร็จแล้ว เก่งมาก!";
+var gameover_nocum1 = "ยินดีด้วย คุณเล่นรอบเอดจ์จิ้งจนจบแล้ว!";
+var gameover_nocum2 = "คุณไม่ได้รับอนุญาตให้เสร็จในรอบนี้";
+var gameover_nocum3 = "โหลดหน้านี้ใหม่ถ้าคุณอยากเริ่มอีกครั้ง!";
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Fraunces:opsz,wght@9..144,300;9..144,500&display=swap" rel="stylesheet">
+<style>
+#validatewrapper {
+  --bg: #0a0b0d; --bg-2: #11141a; --bg-3: #161a21;
+  --line: rgba(255,255,255,0.08); --line-strong: rgba(255,255,255,0.16);
+  --ink: #ece9e2; --ink-dim: #6b6f78; --ink-faint: #3a3d44;
+  --accent: #d4ff3a; --warn: #ff5a3c;
+  --serif: 'Fraunces', Georgia, serif; --mono: 'JetBrains Mono', ui-monospace, monospace;
+  position: fixed; inset: 0; z-index: 500; overflow: auto;
+  background: var(--bg);
+  background-image: radial-gradient(circle at 15% 0%, rgba(212,255,58,0.05), transparent 40%),
+    radial-gradient(circle at 90% 100%, rgba(255,90,60,0.03), transparent 40%);
+  color: var(--ink); font-family: var(--mono); font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  padding: clamp(12px, 3vw, 32px);
+  display: flex; flex-direction: column; gap: clamp(14px, 2.4vw, 28px);
+}
+#validatewrapper * { box-sizing: border-box; margin: 0; padding: 0; }
+#validatewrapper header { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--line); padding-bottom: 14px; max-width: 1280px; margin: 0 auto; width: 100%; }
+#validatewrapper header .id { font-size: 10px; letter-spacing: 0.3em; color: var(--ink-dim); text-transform: uppercase; }
+#validatewrapper header h1 { font-family: var(--serif); font-weight: 500; font-size: 22px; letter-spacing: -0.01em; }
+#validatewrapper header .ts { font-size: 10px; color: var(--ink-dim); letter-spacing: 0.15em; }
+#validatewrapper main { display: flex; flex-direction: column; gap: clamp(14px, 2.4vw, 24px); max-width: 1280px; margin: 0 auto; width: 100%; }
+#validatewrapper .video-panel { position: relative; background: var(--bg-2); border: 1px solid var(--line); width: 100%; height: min(72vh, 760px); min-height: 320px; overflow: hidden; }
+#validatewrapper .video-panel video, #validatewrapper .video-panel canvas { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+#validatewrapper .video-panel video { transform: scaleX(-1); }
+#validatewrapper .corner { position: absolute; width: 14px; height: 14px; border: 1px solid var(--ink); opacity: 0.7; }
+#validatewrapper .corner.tl { top: 8px; left: 8px; border-right: none; border-bottom: none; }
+#validatewrapper .corner.tr { top: 8px; right: 8px; border-left: none; border-bottom: none; }
+#validatewrapper .corner.bl { bottom: 8px; left: 8px; border-right: none; border-top: none; }
+#validatewrapper .corner.br { bottom: 8px; right: 8px; border-left: none; border-top: none; }
+#validatewrapper .empty-state { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; text-align: center; padding: 24px; }
+#validatewrapper .empty-state.hidden { display: none; }
+#validatewrapper .empty-state p { font-size: 12px; color: var(--ink-dim); letter-spacing: 0.08em; max-width: 320px; line-height: 1.6; }
+#validatewrapper .empty-state .privacy { font-family: var(--serif); font-style: italic; font-size: 15px; color: var(--ink); letter-spacing: 0.01em; }
+#validatewrapper button.start { background: #2563eb; color: #ffffff; border: none; padding: 14px 28px; font-family: var(--mono); font-size: 11px; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; cursor: pointer; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+#validatewrapper button.start:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(37,99,235,0.35); }
+#validatewrapper button.start:disabled { background: var(--ink-faint); color: var(--ink-dim); cursor: not-allowed; transform: none; box-shadow: none; }
+#validatewrapper .load-progress { width: 280px; display: none; flex-direction: column; gap: 10px; }
+#validatewrapper .load-progress.visible { display: flex; }
+#validatewrapper .load-progress .lp-meta { display: flex; justify-content: space-between; font-size: 9px; letter-spacing: 0.25em; color: var(--ink-dim); text-transform: uppercase; }
+#validatewrapper .load-progress .lp-meta .lp-pct { color: var(--accent); font-variant-numeric: tabular-nums; }
+#validatewrapper .load-progress .lp-bar { height: 3px; background: var(--bg-3); position: relative; overflow: hidden; }
+#validatewrapper .load-progress .lp-fill { position: absolute; inset: 0 auto 0 0; width: 0%; background: var(--accent); transition: width 0.2s ease; box-shadow: 0 0 12px rgba(212,255,58,0.5); }
+#validatewrapper .load-progress.indeterminate .lp-fill { width: 35% !important; animation: vld-lp-slide 1.4s ease-in-out infinite; }
+@keyframes vld-lp-slide { 0% { transform: translateX(-100%); } 100% { transform: translateX(280%); } }
+#validatewrapper .load-progress .lp-bytes { font-size: 10px; color: var(--ink-faint); font-variant-numeric: tabular-nums; letter-spacing: 0.05em; text-align: center; }
+#validatewrapper .readout { display: flex; flex-direction: column; gap: 20px; }
+#validatewrapper .warning-frame { position: absolute; inset: 0; border: 3px solid var(--warn); pointer-events: none; opacity: 0; transition: opacity 0.2s ease; box-shadow: inset 0 0 60px rgba(255, 90, 60, 0.35); animation: vld-warn-pulse 1.2s ease-in-out infinite; }
+#validatewrapper .warning-frame.active { opacity: 1; }
+@keyframes vld-warn-pulse { 0%, 100% { box-shadow: inset 0 0 60px rgba(255, 90, 60, 0.25); } 50% { box-shadow: inset 0 0 90px rgba(255, 90, 60, 0.55); } }
+#validatewrapper .indicators { position: absolute; left: 12px; right: 12px; bottom: 12px; display: flex; flex-direction: column; gap: 8px; z-index: 2; pointer-events: none; }
+#validatewrapper .indicator { background: rgba(17,20,26,0.78); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid var(--line); padding: 12px 16px; position: relative; transition: border-color 0.4s ease; overflow: hidden; pointer-events: auto; }
+#validatewrapper .indicator::before { content: ''; position: absolute; inset: 0; opacity: 0; transition: opacity 0.4s ease; pointer-events: none; }
+#validatewrapper .indicator.violation { border-color: var(--warn); }
+#validatewrapper .indicator.violation::before { background: linear-gradient(135deg, rgba(255,90,60,0.42), rgba(255,90,60,0.18)); opacity: 1; }
+#validatewrapper .indicator.ok { border-color: rgba(212,255,58,0.5); }
+#validatewrapper .indicator.ok::before { background: linear-gradient(135deg, rgba(212,255,58,0.34), rgba(212,255,58,0.12)); opacity: 1; }
+#validatewrapper .indicator > * { position: relative; z-index: 1; }
+#validatewrapper .indicator.hidden { display: none; }
+#validatewrapper .progress-block.hidden { display: none; }
+#validatewrapper .indicator .ind-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
+#validatewrapper .indicator .ind-label { font-size: 13px; letter-spacing: 0.12em; color: var(--ink); text-transform: uppercase; }
+#validatewrapper .indicator .ind-readout { display: none; }
+#validatewrapper .ind-bar { display: grid; grid-template-columns: repeat(10, 1fr); gap: 3px; margin-bottom: 6px; }
+#validatewrapper .ind-seg { height: 8px; background: var(--bg-3); border: 1px solid transparent; transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease; }
+#validatewrapper .ind-seg.fill-1 { background: #ff5a3c; }
+#validatewrapper .ind-seg.fill-2 { background: #ff7138; }
+#validatewrapper .ind-seg.fill-3 { background: #ff8c34; }
+#validatewrapper .ind-seg.fill-4 { background: #ffa830; }
+#validatewrapper .ind-seg.fill-5 { background: #ffc52c; }
+#validatewrapper .ind-seg.fill-6 { background: #ffe128; }
+#validatewrapper .ind-seg.fill-7 { background: #f0f424; }
+#validatewrapper .ind-seg.fill-8 { background: #d4ff3a; }
+#validatewrapper .ind-seg.fill-9 { background: #b8f538; }
+#validatewrapper .ind-seg.fill-10 { background: #9ee034; }
+#validatewrapper .ind-seg.threshold { border-left: 1px dashed rgba(236,233,226,0.35); }
+#validatewrapper .indicator .ind-thresh { font-size: 9px; letter-spacing: 0.18em; color: var(--ink-faint); text-transform: uppercase; }
+#validatewrapper .progress-block { background: rgba(17,20,26,0.78); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid var(--line); padding: 10px 16px; display: flex; align-items: center; justify-content: space-between; gap: 14px; font-size: 11px; letter-spacing: 0.2em; color: var(--ink-dim); text-transform: uppercase; transition: border-color 0.3s ease; pointer-events: auto; }
+#validatewrapper .progress-block > span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+#validatewrapper .progress-pips { flex-shrink: 0; display: flex; gap: 4px; }
+#validatewrapper .progress-block.active { border-color: rgba(212,255,58,0.4); color: var(--accent); }
+#validatewrapper .pip { display: block; width: 18px; height: 4px; background: var(--bg-3); flex-shrink: 0; transition: background 0.3s ease; }
+#validatewrapper .pip.lit { background: var(--accent); }
+#validatewrapper .light-warn { background: rgba(17,20,26,0.78); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(251,191,36,0.45); padding: 8px 16px; font-size: 12px; letter-spacing: 0.18em; color: rgba(251,191,36,0.9); text-transform: uppercase; text-align: center; pointer-events: auto; }
+#validatewrapper .light-warn.hidden { display: none; }
+#validatewrapper .pass-overlay { position: fixed; inset: 0; background: rgba(10,11,13,0.96); backdrop-filter: blur(20px); display: flex; align-items: center; justify-content: center; z-index: 510; opacity: 0; pointer-events: none; transition: opacity 0.4s ease; }
+#validatewrapper .pass-overlay.visible { opacity: 1; pointer-events: auto; }
+#validatewrapper .pass-card { background: var(--bg); border: 2px solid var(--accent); padding: 56px 64px; text-align: center; max-width: 420px; box-shadow: 0 0 80px rgba(212,255,58,0.2); transform: scale(0.96); transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1); }
+#validatewrapper .pass-overlay.visible .pass-card { transform: scale(1); }
+#validatewrapper .pass-mark { width: 80px; height: 80px; margin: 0 auto 24px; border: 2px solid var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--accent); font-size: 38px; }
+#validatewrapper .pass-card h2 { font-family: var(--serif); font-style: italic; font-weight: 300; font-size: 38px; color: var(--ink); margin-bottom: 8px; letter-spacing: -0.01em; }
+#validatewrapper .pass-card .pass-sub { font-size: 16px; letter-spacing: 0.25em; color: var(--accent); text-transform: uppercase; }
+#validatewrapper footer { max-width: 1280px; margin: 0 auto; width: 100%; border-top: 1px solid var(--line); padding-top: 14px; font-size: 10px; color: var(--ink-faint); letter-spacing: 0.15em; text-transform: uppercase; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+#validatewrapper footer .priv { color: var(--accent); }
+</style>
+<script type="text/javascript" src="https://www.edgemeplease.com/minimize-js.cgi?v=20"></script>
+</head>
+<body>
+<div id="mainwrapper">
+<div id="choose">
+<div class="site-tabs">
+  <div class="tab active">💦 เอดจ์มีพลีส!</div>
+  <div class="tab inactive"><a href="https://th.trainmeplease.com/">💪 กรุณาฝึกฉัน!</a></div>
+</div>
+<div class="instructions">
+	<p>ปล่อยให้ <strong>EdgeMePlease.com</strong> ช่วยทำให้คุณเสร็จ เลือกตัวเลือกของคุณแล้วทำตามคำสั่ง</p>
+	<ul>
+	<li>เมื่อหน้าจอเป็น<strong>สีเขียวเข้ม</strong> คุณสามารถ<strong>ช่วยตัวเอง</strong>ได้ แต่ห้ามเสร็จ</li>
+	<li>เมื่อหน้าจอเปลี่ยนเป็น<strong>สีแดงเข้ม</strong> คุณต้อง<strong>หยุดช่วยตัวเองทันที</strong> ห้ามแตะจู๋ของคุณ</li>
+	<li>คุณควรจะอยู่ใกล้ถึงจุดสุดยอดเมื่อแถบ EDGE เข้าใกล้ 100%</li>
+	<li>เตรียมพร้อมที่จะเสร็จเมื่อแถบความคืบหน้าเข้าใกล้ช่วง CUM คุณไม่มีทางรู้เลยว่ามันจะคืบหน้าต่อเมื่อไหร่!</li>
+	<li>ห้ามเสร็จก่อนที่จะได้รับคำสั่งให้ทำ</li>
+	<li>ถ้าคุณเสร็จเร็วเกินไป ให้เอามือออกจากจู๋แล้วปล่อยให้น้ำไหลออกมาเอง คุณจะได้จุดสุดยอดที่พังเพราะแพ้เกม</li>
+	<li>เมื่อหน้าจอเปลี่ยนเป็น<strong>สีเขียวสด</strong> <strong>คุณสามารถเสร็จได้</strong>!</li>
+	<li>เมื่อคุณได้รับอนุญาตให้เสร็จ คุณจะมีเวลาจำกัด ถ้าคุณยังไม่เสร็จก่อนที่แถบ CUM จะถึง 100% คุณจะเสียสิทธิ์ในการเสร็จ</li>
+	<li>ถ้าหน้าจอเปลี่ยนเป็นสีแดงสด ขอโทษด้วย วันนี้ไม่ใช่วันโชคดีของคุณ</li>
+	<li>ไม่ต้องกังวล ถ้าคุณแพ้ คุณสามารถเริ่มความท้าทายใหม่ตั้งแต่ต้นได้เสมอ ฉันมั่นใจว่ามันจะยิ่งสนุกขึ้นเมื่อจู๋ของคุณยังเต้นตุบ ๆ จากรอบที่แล้ว!</li>
+	<li>เปิดคลิปโป๊สักหน่อยเพื่อเพิ่มความเร้าใจให้เกม!</li>
+	<li>ขอให้โชคดี! [ส่งความคิดเห็น คำถาม หรือข้อเสนอแนะอื่น ๆ ได้ที่ <a href='mailto:admin@edgemeplease.com'>admin@edgemeplease.com</a>]</li>
+</ul>
+</div>
+<form class="form-horizontal">
+<div class="form-group">
+<label class="col-sm-4 control-label">ระยะเวลา</label>
+<div class="col-sm-8">
+<select name="duration" class="selectpicker">
+<option value="2">คนหลั่งเร็ว</option>
+<option value="7">สั้น</option>
+<option value="15" selected="selected">ปกติ</option>
+<option value="30">ยาว</option>
+<option value="60">ยาวมาก</option>
+</select>
+</div>
+</div>
+<div class="form-group">
+<label class="col-sm-4 control-label">เลือกระดับความยาก</label>
+<div class="col-sm-8">
+<select name="mode" class="selectpicker">
+<option value="0">น่าเบื่อ</option>
+<option value="1">ง่าย</option>
+<option value="2" selected="selected">ปกติ</option>
+<option value="3">ยาก</option>
+<option value="4">เป็นไปไม่ได้</option>
+</select>
+</div>
+</div>
+<div class="form-group">
+<label class="col-sm-4 control-label">คุณอยากเสร็จไหม?</label>
+<div class="col-sm-8">
+<select name="cum" class="selectpicker" data-width="auto">
+<option value="0">ไม่ ฉันจะเสร็จทีหลัง</option>
+<option value="0.2">ฉันจะเสร็จก็ต่อเมื่อฉันสมควรได้รับมันแล้วเท่านั้น</option>
+<option value="0.5" selected="selected">ฉันจะทำตามที่คุณต้องการ</option>
+<option value="0.7">ใช่ ได้โปรดให้ฉันเสร็จที!</option>
+<option value="0.9">ได้โปรด! ฉันขอร้องล่ะ ให้ฉันเสร็จที!</option>
+</select>
+</div>
+</div>
+<div class="form-group" style="display:none">
+<label class="col-sm-4 control-label">ควบคุมจังหวะรูดทั้งหมดไหม?</label>
+<div class="col-sm-8">
+<select name="strokeControl" class="selectpicker" data-width="auto">
+<option value="" selected="selected">ไม่ (ใช้ความเร็วของตัวเอง ยกเว้นเมื่อมีคำสั่งเป็นอย่างอื่น)</option>
+<option value="1">ใช่ ฉันต้องการให้ควบคุม</option>
+</select>
+</div>
+</div>
+<div class="form-group" id="validateFormRow" style="display:none">
+<label class="col-sm-4 control-label">ตรวจสอบการถอดเสื้อผ้าไหม?</label>
+<div class="col-sm-8">
+<select name="validateCloth" class="selectpicker" data-width="auto">
+<option value="no">ไม่</option>
+<option value="local">ผ่านอุปกรณ์ในเครื่อง</option>
+</select>
+</div>
+</div>
+<div class="form-group">
+<div class="col-sm-4"></div>
+<div class="col-sm-8">
+<button type="submit"  id="submit" class="btn btn-default btn-primary" style="margin-bottom:20px">เริ่ม</button>
+</div>
+</div>
+</form>
+
+  <div>
+    <table style="width:100%">
+	  <tr>
+	    <td class="lang-bar" style="width:60%;text-align:left"><p style="margin:0"><bdi><a title="เยอรมัน" href="https://de.edgemeplease.com">DE</a></bdi> | <bdi><a title="อังกฤษ" href="https://www.edgemeplease.com">EN</a></bdi> | <bdi><a title="สเปน" href="https://es.edgemeplease.com">ES</a></bdi> | <bdi><a title="ฝรั่งเศส" href="https://fr.edgemeplease.com">FR</a></bdi> | <bdi><a title="อิตาลี" href="https://it.edgemeplease.com">IT</a></bdi> | <bdi><a title="ญี่ปุ่น" href="https://ja.edgemeplease.com">JA</a></bdi> | <bdi><a title="เกาหลี" href="https://ko.edgemeplease.com">KO</a></bdi> | <bdi><a title="ดัตช์" href="https://nl.edgemeplease.com">NL</a></bdi> | <bdi><a title="โปรตุเกส" href="https://pt.edgemeplease.com">PT</a></bdi> | <bdi><a title="โรมาเนีย" href="https://ro.edgemeplease.com">RO</a></bdi> | <bdi><a title="รัสเซีย" href="https://ru.edgemeplease.com">RU</a></bdi> | <bdi><strong>TH</strong></bdi> | <bdi><a title="เวียดนาม" href="https://vi.edgemeplease.com">VI</a></bdi> | <bdi><a title="จีน" href="https://zh.edgemeplease.com">ZH</a></bdi></p></td>
+		<td style="width:40%;text-align:right"><a style="text-decoration:underline; color:#bbf" href="ความเป็นส่วนตัว/">นโยบายความเป็นส่วนตัว</a></td>
+	  </tr>
+	</table>
+    
+    <br/><br/>
+  </div>
+</div>
+
+<div id="gamewrapper">
+<div id="image"></div>
+<div id="flash" class="off" style="display:none"><span>รูด</span></div>
+<div id="message"></div>
+<div id="progress">
+	<div class="jerkbar">
+		<div class="bar"></div>
+		<div class="text">EDGE</div>
+	</div>
+	<div class="cumbar">
+		<div class="separator"></div>
+		<div class="bar"></div>
+		<div class="text">CUM!</div>
+	</div>
+</div>
+<div id="cumSoon">
+  <div id="speed"></div>
+</div>
+</div>
+</div>
+<div id="validatewrapper" style="display:none">
+<header>
+  <div class="id">หน่วย · 04A / การแบ่งส่วน</div>
+  <h1 id="siteName">EdgeMePlease.com</h1>
+  <div class="ts" id="clock">&#x2014;</div>
+</header>
+<main>
+  <div class="video-panel">
+    <video id="video" autoplay playsinline muted style="display:none"></video>
+    <span class="corner tl"></span><span class="corner tr"></span>
+    <span class="corner bl"></span><span class="corner br"></span>
+    <div class="warning-frame" id="warnFrame"></div>
+    <div class="empty-state" id="placeholder">
+      <p class="privacy" id="privacyNote">การตรวจสอบเกิดขึ้นบนอุปกรณ์ของคุณ</p>
+      <button class="start" id="startBtn">เปิดกล้อง</button>
+      <div class="load-progress" id="loadProgress">
+        <div class="lp-meta">
+          <span id="lpLabel">กำลังดาวน์โหลดโมเดล</span>
+          <span class="lp-pct" id="lpPct">0%</span>
+        </div>
+        <div class="lp-bar"><div class="lp-fill" id="lpFill"></div></div>
+        <div class="lp-bytes" id="lpBytes">&#x2014; / &#x2014;</div>
+      </div>
+      <p id="loadMsg"></p>
+    </div>
+    <div class="indicators" id="indicators" style="display:none">
+      <div class="light-warn hidden" id="lightWarn">ปรับแสงให้ดีขึ้นเพื่อการตรวจสอบที่แม่นยำ</div>
+      <div class="indicator" id="indBody">
+        <div class="ind-header">
+          <div class="ind-label" id="indBodyLabel">ร่างกายอยู่ในกรอบ</div>
+          <div class="ind-readout"><span id="indBodyVal">&#x2014;</span><span class="max"> / 10</span></div>
+        </div>
+        <div class="ind-bar" id="indBodyBar"></div>
+        <div class="ind-thresh">ผ่าน: 7 / 10 ขึ้นไป</div>
+      </div>
+      <div class="indicator" id="indCloth">
+        <div class="ind-header">
+          <div class="ind-label" id="indClothLabel">ถอดเสื้อผ้า</div>
+          <div class="ind-readout"><span id="indClothVal">&#x2014;</span><span class="max"> / 10</span></div>
+        </div>
+        <div class="ind-bar" id="indClothBar"></div>
+        <div class="ind-thresh">ผ่าน: 10 / 10</div>
+      </div>
+      <div class="progress-block hidden" id="vld-progress">
+        <span id="progressLabel">กำลังรอเฟรมแรก</span>
+        <div class="progress-pips" id="pips"></div>
+      </div>
+    </div>
+  </div>
+</main>
+<div class="pass-overlay" id="passOverlay">
+  <div class="pass-card">
+    <div class="pass-mark">&#x2713;</div>
+    <h2 id="passVerified">ยืนยันแล้ว</h2>
+    <div class="pass-sub" id="passGameSub">เกมกำลังเริ่ม</div>
+  </div>
+</div>
+<footer>
+  <span class="priv" id="footerPriv">⬤ ประมวลผลบนอุปกรณ์</span>
+  <span id="footerTech">tfjs · body-pix resnet50 · อัตราส่วนเงา/ผิว</span>
+</footer>
+<script>
+window.STRINGS = {
+  title:        "EdgeMePlease.com",
+  begin:        "เปิดกล้อง",
+  connecting:   "กำลังเชื่อมต่อ… (อาจใช้เวลาหลายนาทีในครั้งแรกหากการเชื่อมต่อช้า)",
+  downloading:  "กำลังดาวน์โหลดโมเดล",
+  initializing: "กำลังเริ่มต้น…",
+  loaderr:      "โหลดโมเดลไม่สำเร็จ",
+  retry:        "ลองอีกครั้ง",
+  requestcam:   "กำลังขอใช้กล้อง…",
+  cameraerr:    "การเข้าถึงกล้องถูกปฏิเสธ",
+  monitoring:   "กำลังตรวจสอบ · ต้องการตัวอย่างที่ผ่าน {n} ครั้ง",
+  clean:        "ผ่าน · {a} / {b} ตัวอย่าง",
+  bodyerr:      "ร่างกายอยู่ในกรอบไม่ครบ",
+  clotherr:     "ตรวจพบเสื้อผ้า",
+  streakrst:    "รีเซ็ตสตรีค · {reason}",
+  noperson:     "ไม่พบบุคคล",
+  poorlighting: "ปรับแสงให้ดีขึ้นเพื่อการตรวจสอบที่แม่นยำ",
+  bodylabel:    "ร่างกายอยู่ในกรอบ",
+  clothlabel:   "ถอดเสื้อผ้า",
+  privacy:      "การตรวจสอบเกิดขึ้นบนอุปกรณ์ของคุณ",
+  verified:     "ยืนยันแล้ว",
+  gamesub:      "เกมกำลังเริ่ม",
+  footer1:      "⬤ ประมวลผลบนอุปกรณ์",
+  footer2:      "tfjs · body-pix resnet50 · อัตราส่วนเงา/ผิว"
+};
+</script>
+</div>
+<script type="module" src="https://www.edgemeplease.com/validate.js?v=109"></script>
+
+
+</body>
+</html>
